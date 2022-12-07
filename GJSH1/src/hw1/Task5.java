@@ -9,4 +9,22 @@ public class Task5 {
         StringBuilder sb = new StringBuilder(s1);
         return s1.equalsIgnoreCase(sb.reverse().toString());
     }
+
+    public boolean isPalindromeTwo(String s){
+        int left=0,right=s.length()-1;
+        for (var i = 0; i < s.length()/2; i++) {
+            if (Character.isLetterOrDigit(s.charAt(left)) && Character.isLetterOrDigit(s.charAt(right))){
+                if (Character.toLowerCase(s.charAt(left))!=Character.toLowerCase(s.charAt(right))) return false;
+                else{
+                    left++;
+                    right--;
+                }
+            }
+            else{
+                if (!Character.isLetterOrDigit(s.charAt(left))) left++;
+                if (!Character.isLetterOrDigit(s.charAt(right))) right--;
+            }
+        }
+        return true;
+    }
 }

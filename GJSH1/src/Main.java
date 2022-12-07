@@ -23,7 +23,7 @@ public class Main {
         System.out.println(task4.reverseWords(s));
 
         Task5 task5 = new Task5();
-        String str = "ab_a";
-        System.out.println(task5.isPalindrome(str));
+        String str = "a.b,.";
+        System.out.println(task5.isPalindromeTwo(str));
     }
 }
