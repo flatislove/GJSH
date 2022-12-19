@@ -34,4 +34,6 @@ public class Task3 {
                 && isSymmetricSubTree(left.left, right.right)
                 && isSymmetricSubTree(left.right, right.left);
     }
+    
+    
 }
