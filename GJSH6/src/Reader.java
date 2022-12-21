@@ -1,24 +1,12 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Arrays;
 
 
 public class Reader {
-    private String name;
-    private int libraryCardNumber;
-    private Faculty faculty;
-    private String dateOfBirth;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Reader() {
-    }
+    private final String name;
+    private final int libraryCardNumber;
+    private final Faculty faculty;
+    private final String dateOfBirth;
+    private final String phoneNumber;
 
     public Reader(String name, int libraryCardNumber, Faculty faculty, String dateOfBirth, String phoneNumber) {
         this.name = name;
@@ -28,51 +16,36 @@ public class Reader {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getLibraryCardNumber() {
-        return libraryCardNumber;
-    }
-
-    public void setLibraryCardNumber(int libraryCardNumber) {
-        this.libraryCardNumber = libraryCardNumber;
-    }
-
-    public Faculty getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    private String phoneNumber;
-
     @Override
     public String toString() {
-        return libraryCardNumber +" "+name+" "+phoneNumber;
+        return this.libraryCardNumber + " " + name + " " + phoneNumber;
     }
 
-    public void takeBook() {
-
+    public void getAllReaderInformation() {
+        System.out.println(name + " " + libraryCardNumber + " " + faculty + " " + dateOfBirth + " " + phoneNumber);
     }
 
-    public void returnBook() {
-
+    public void takeBook(int booksCount) {
+        System.out.println(name + " взял " + booksCount + " книг");
     }
 
+    public void takeBook(Book book) {
+        System.out.println(name + " взял книгу " + book.toString());
+    }
+
+    public void takeBook(Book... books) {
+        System.out.println(name + " взял книги " + Arrays.toString(books));
+    }
+
+    public void returnBook(int booksCount) {
+        System.out.println(name + " вернул " + booksCount + " книг");
+    }
+
+    public void returnBook(Book book) {
+        System.out.println(name + " вернул книгу " + book.toString());
+    }
+
+    public void returnBook(Book... books) {
+        System.out.println(name + " вернул книги " + Arrays.toString(books));
+    }
 }
