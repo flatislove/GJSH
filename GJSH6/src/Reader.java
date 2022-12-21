@@ -1,6 +1,5 @@
 import java.util.Arrays;
 
-
 public class Reader {
     private final String name;
     private final int libraryCardNumber;
