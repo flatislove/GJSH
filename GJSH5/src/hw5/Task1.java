@@ -24,7 +24,7 @@ public class Task1 {
 
     public int countWordsVersion(String[] words1, String[] words2) {
         int count = 0;
-        int result_count = 0;
+        int resultCount = 0;
         for (String s : words1) {
             for (String value : words1) {
                 if (s.equals(value)) {
@@ -38,11 +38,11 @@ public class Task1 {
                     }
                 }
                 if (count==2) {
-                    result_count++;
+                    resultCount++;
                 }
             }
             count = 0;
         }
-        return result_count;
+        return resultCount;
     }
 }

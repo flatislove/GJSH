@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 public class Task2 {
     public List<List<String>> findDuplicate(String[] paths) {
         Map<String, List<String>> map = new HashMap<>();
+        Pattern pattern1 = Pattern.compile("(.*)(\\(.*\\))");
         for (String line : paths) {
             String[] files = line.split(" ");
             String directory = files[0];
             for (var i = 1; i < files.length; i++) {
-                Pattern pattern1 = Pattern.compile("(.*)(\\(.*\\))");
                 Matcher matcher = pattern1.matcher(files[i]);
                 if (matcher.find()) {
                     String filename = matcher.group(1);
